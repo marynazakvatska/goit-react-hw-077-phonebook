@@ -42,8 +42,8 @@ export function App() {
      
       <h1>Phonebook</h1>
 
-{/*  {isLoading && <p>Loading tasks...</p>}
-      {error && <p>{error}</p>} */}
+ {isLoading && <p>Loading tasks...</p>}
+      {error && <p>{error}</p>}
      {/*    <p>{contacts.length > 0 && JSON.stringify(contacts, null, 2)}</p> */}
      
     

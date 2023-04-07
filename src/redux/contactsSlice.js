@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { addContacts, deleteContact, fetchContacts } from "./operations";
-import { nanoid } from 'nanoid'
+
 
 
 
@@ -11,11 +11,11 @@ const contactsInitialState = {
 };
   
 const handlePending = state => {
-  state.contacts.isLoading = true;
+  state.isLoading = true;
 };
 const handleRejected = (state, action) => {
-  state.contacts.isLoading = false;
-  state.contacts.error = action.payload;
+  state.isLoading = false;
+  state.error = action.payload;
 };
 
 const contactSlice = createSlice({
@@ -48,9 +48,9 @@ const contactSlice = createSlice({
 
  [fetchContacts.pending]: handlePending,
      [fetchContacts.fulfilled](state, action) {
-        state.contacts.isLoading = false;
-     state.contacts.error = null;
-      state.contacts.items = action.payload;  
+        state.isLoading = false;
+     state.error = null;
+      state.items = action.payload;  
     },
      [fetchContacts.rejected]: handleRejected,
 
@@ -58,9 +58,9 @@ const contactSlice = createSlice({
  
     [addContacts.pending]: handlePending,
     [addContacts.fulfilled](state, action) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      state.contacts.items.push(action.payload);
+      state.isLoading = false;
+      state.error = null;
+      state.items.push(action.payload);
     },
     [addContacts.rejected]: handleRejected,
     
@@ -68,12 +68,12 @@ const contactSlice = createSlice({
     
      [deleteContact.pending]: handlePending,
     [deleteContact.fulfilled](state, action) {
-      state.contacts.isLoading = false;
-      state.contacts.error = null;
-      const index = state.contacts.items.findIndex(
+      state.isLoading = false;
+      state.error = null;
+      const index = state.items.findIndex(
         contact => contact.id === action.payload.id
       );
-      state.contacts.items.splice(index, 1);
+      state.items.splice(index, 1);
     },
     [deleteContact.rejected]:handleRejected,
   },
