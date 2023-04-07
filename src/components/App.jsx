@@ -42,18 +42,13 @@ export function App() {
      
       <h1>Phonebook</h1>
 
- {isLoading && <p>Loading tasks...</p>}
-      {error && <p>{error}</p>}
+ {isLoading && <p>Loading contacts...</p>}
+      
      {/*    <p>{contacts.length > 0 && JSON.stringify(contacts, null, 2)}</p> */}
      
-    
-      
           <Form />
 
           <h2>Contacts</h2>
-
-       {/*    {isLoading && !error && <b>Request in progress...</b>}
- */}
       {contacts.length > 0 && 
         (<>
         < Filter />
