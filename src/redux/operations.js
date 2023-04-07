@@ -3,26 +3,7 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
 
-axios.defaults.baseURL = "https://642e89088ca0fe3352d22529.mockapi.io";
-
-
-
-
-/* fetch('https://642e89088ca0fe3352d22529.mockapi.io/contacts', {
-  method: 'GET',
-  headers: {'content-type':'application/json'},
-}).then(res => {
-  if (res.ok) {
-      return res.json();
-  }
-  // handle error
-}).then(contacts => {
-  console.log(contacts)
-}).catch(error => {
-  // handle error
-}) */
-
-
+axios.defaults.baseURL = "https://64300ee6c26d69edc889e636.mockapi.io";
 
 
 

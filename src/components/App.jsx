@@ -44,8 +44,7 @@ export function App() {
 
  {isLoading && <p>Loading contacts...</p>}
       
-     {/*    <p>{contacts.length > 0 && JSON.stringify(contacts, null, 2)}</p> */}
-     
+      {error && <p>{error}</p>}
           <Form />
 
           <h2>Contacts</h2>
